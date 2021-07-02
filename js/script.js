@@ -96,13 +96,13 @@ function loadData() {
 function startInteraction() {
 
   setTimeout(function () {
-    areaMessages.innerHTML += `<p class="bot-message">Olá, eu sou o Healthbot e estou aqui para ajudar você a calcular seu IMC, peso ideal e gasto calórico! &#128170&#128526</p><br>`;
+    areaMessages.innerHTML += `<p class="bot-message">Hi, I'm Healthbot and I'm here to help you calculate your BMI, ideal weight, and caloric expenditure! &#128170&#128526</p><br>`;
     isTyping = true;
     typingControl();
   }, 1000);
 
   setTimeout(function () {
-    areaMessages.innerHTML += `<p class="bot-message">Como posso chamar você?</p>`;
+    areaMessages.innerHTML += `<p class="bot-message">How can I call you?</p>`;
     isTyping = false;
     typingControl();
     autoScroll();
@@ -118,19 +118,19 @@ function controlInteraction() {
 
   /* USER NAME */
   if (userDataControl[0] != null) {
-    areaMessages.innerHTML += `<p class="user-message">Pode me chamar de ${userData[0]}</p>`;
+    areaMessages.innerHTML += `<p class="user-message">You can call me ${userData[0]}</p>`;
     userDataControl[0] = null;
     isTyping = true;
     typingControl();
     scrollDiv();
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Certo ${userData[0]}, vou precisar de algumas informações pra poder fazer os cálculos</p><br>`;
+      areaMessages.innerHTML += `<p class="bot-message">Okay ${userData[0]}, I'm going to need some information to be able to do the calculations.</p><br>`;
       scrollDiv();
     }, 3000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Qual o seu sexo? Para ser mais acertivo nos cálculos preciso dessa informação, por favor digite "<span class="info">Masculino</span>" ou "<span class="info">Feminino</span>".</p>`;
+      areaMessages.innerHTML += `<p class="bot-message">What's your sex? To be more accurate in the precise calculations of this information, please type "Male" or "Feminine". "<span class="info">Masculino</span>" ou "<span class="info">Feminino</span>".</p>`;
       isTyping = false;
       typingControl();
       scrollDiv();
@@ -146,7 +146,7 @@ function controlInteraction() {
     scrollDiv();
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Legal, quantos quilos você está pesando? <span class="example">Exemplo: 65</span></p>`;
+      areaMessages.innerHTML += `<p class="bot-message">Cool, how many kilograms are you weighing? <span class="example">Example: 65</span></p>`;
       isTyping = false;
       typingControl();
       scrollDiv();
@@ -155,14 +155,14 @@ function controlInteraction() {
 
   /* user WEIGHT */
   if (userDataControl[2] != null) {
-    areaMessages.innerHTML += `<p class="user-message">${userData[2]} Kg</p>`;
+    areaMessages.innerHTML += `<p class="user-message">${userData[2]} kg</p>`;
     userDataControl[2] = null;
     isTyping = true;
     typingControl();
     scrollDiv();
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">E qual a sua altura em centímetros? <span class="example">Exemplo: 170</span></p>`;
+      areaMessages.innerHTML += `<p class="bot-message">And how tall are you in centimeters?  <span class="example">Example: 170</span></p>`;
       isTyping = false;
       typingControl();
       scrollDiv();
@@ -178,7 +178,7 @@ function controlInteraction() {
     scrollDiv();
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Certo, já falta pouco. Quantos anos você tem? <span class="example">Exemplo: 25</span></p>`;
+      areaMessages.innerHTML += `<p class="bot-message">Okay, it's not long now. How old are you?  <span class="example">Example: 25</span></p>`;
       isTyping = false;
       typingControl();
       scrollDiv();
@@ -187,19 +187,20 @@ function controlInteraction() {
 
   /* USER AGE */
   if (userDataControl[4] != null) {
-    areaMessages.innerHTML += `<p class="user-message">${userData[4]} anos</p>`;
+    areaMessages.innerHTML += `<p class="user-message">${userData[4]} years old</p>`;
     userDataControl[4] = null;
     isTyping = true;
     typingControl();
     scrollDiv();
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Ótimo! Por último preciso saber qual é o seu nível de atividade física, por tanto digite uma das opções a seguir:</p><br>`;
+      areaMessages.innerHTML += `<p class="bot-message">very good! Finally I need to know what is your level of physical activity, so type one of the following options:</p><br>`;
       scrollDiv();
     }, 4000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message"><span class="info">Nenhuma, Leve, Moderada, Intensa</span></p>`;
+      /*Nenhuma, Leve, Moderada, Intensa*/
+      areaMessages.innerHTML += `<p class="bot-message"><span class="info">None, Light, Moderate, Intense</span></p>`;
       isTyping = false;
       typingControl();
       scrollDiv();
@@ -216,82 +217,82 @@ function controlInteraction() {
     scrollDiv();
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Perfeito, já tenho tudo o que preciso para calcular aqui.</p><br>`;
+      areaMessages.innerHTML += `<p class="bot-message">Perfect, I've got everything I need to figure out here.</p><br>`;
       loadData();
       scrollDiv();
     }, 3000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Mas antes uma informação muito importante, ${userName}:</p><br>`;
+      areaMessages.innerHTML += `<p class="bot-message">But first a very important information, ${userName}:</p><br>`;
       scrollDiv();
     }, 5000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">O resultado que irei te mostrar <span class="info">são apenas médias obtidas através de fórmulas</span>, por tanto você não deve levar ao pé da letra.</p><br>`;
+      areaMessages.innerHTML += `<p class="bot-message">The result I will show you <span class="info">are only averages obtained through formulas</span>, so you should not take to the letter.</p><br>`;
       scrollDiv();
     }, 10000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Sendo assim é fundamental que você procure um nutricionista para que ele possa te orientar com mais precisão!</p><br>`;
+      areaMessages.innerHTML += `<p class="bot-message">Therefore it is essential that you look for a nutritionist so that he can guide you more accurately!</p><br>`;
       scrollDiv();
     }, 16000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Mas vamos lá, enquanto falava com você já fiz os cálculos aqui... &#128540</p><br>`;
+      areaMessages.innerHTML += `<p class="bot-message">But come on, while I was talking to you, I've already done the calculations here... &#128540</p><br>`;
       scrollDiv();
     }, 19000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Seu IMC é de <span class="info">${userIMC} kg/m² - ${resultIMC}</span></p><br>`;
+      areaMessages.innerHTML += `<p class="bot-message">Your BMI is <span class="info">${userIMC} kg/m² - ${resultIMC}</span></p><br>`;
       scrollDiv();
     }, 22000);
 
     setTimeout(function () {
       switch (resultIMC) {
         case 'Baixo peso':
-          areaMessages.innerHTML += `<p class="bot-message">Infelizmente você está abaixo do seu peso ideal, onde a média é de <span class="info">${idealWeight} Kg &#128533</span></p><br>`;
+          areaMessages.innerHTML += `<p class="bot-message">Unfortunately you are under your ideal weight, where the average is <span class="info">${idealWeight} Kg &#128533</span></p><br>`;
           scrollDiv();
           break;
         case 'Peso normal':
-          areaMessages.innerHTML += `<p class="bot-message">Parabéns, você está dentro dos limites do seu peso ideal, onde a média é de <span class="info">${idealWeight} Kg &#128516</span></p><br>`;
+          areaMessages.innerHTML += `<p class="bot-message">Congratulations, you are within the limits of your ideal weight, where the average is <span class="info">${idealWeight} Kg &#128516</span></p><br>`;
           scrollDiv();
           break;
         case 'Sobrepeso':
-          areaMessages.innerHTML += `<p class="bot-message">Infelizmente você está um pouco acima do seu peso ideal, onde a média é de <span class="info">${idealWeight} Kg &#128533</span></p><br>`;
+          areaMessages.innerHTML += `<p class="bot-message">Unfortunately, you are a little above your ideal weight, where the average is<span class="info">${idealWeight} Kg &#128533</span></p><br>`;
           scrollDiv();
           break;
         case 'Obesidade de grau 1':
-          areaMessages.innerHTML += `<p class="bot-message">Infelizmente você está acima do seu peso ideal, onde a média é de <span class="info">${idealWeight} Kg &#128533</span></p><br>`;
+          areaMessages.innerHTML += `<p class="bot-message">Unfortunately you are above your ideal weight, where the average is <span class="info">${idealWeight} Kg &#128533</span></p><br>`;
           scrollDiv();
           break;
         case 'Obesidade de grau 2':
-          areaMessages.innerHTML += `<p class="bot-message">Infelizmente você está acima do seu peso ideal, onde a média é de <span class="info">${idealWeight} Kg &#128533</span></p><br>`;
+          areaMessages.innerHTML += `<p class="bot-message">Unfortunately you are above your ideal weight, where the average is <span class="info">${idealWeight} Kg &#128533</span></p><br>`;
           scrollDiv();
           break;
         case 'Obesidade de grau 3':
-          areaMessages.innerHTML += `<p class="bot-message">Infelizmente você está acima do seu peso ideal, onde a média é de <span class="info">${idealWeight} Kg &#128533</span></p><br>`;
+          areaMessages.innerHTML += `<p class="bot-message">Unfortunately you are above your ideal weight, where the average is <span class="info">${idealWeight} Kg &#128533</span></p><br>`;
           scrollDiv();
           break;
       }
     }, 24000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Se você consumir uma quantidade estimada de <span class="info">${resultMetabolic} calorias</span> diariamente, você irá manter o seu peso atual de <span class="info">${userWeight} Kg</span> (mantendo também a mesma rotina de atividade física)</p><br>`;
+      areaMessages.innerHTML += `<p class="bot-message">If you consume an estimated amount of <span class="info">${resultMetabolic} calories</span> daily, you will maintain your current weight of <span class="info">${userWeight} Kg</span> (also keeping the same physical activity routine)</p><br>`;
       scrollDiv();
     }, 33000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Caso você tenha a intenção de mudar o seu peso atual, procure um nutricionista para que ele possa montar um plano alimentar com as calorias necessárias para você.</p><br>`;
+      areaMessages.innerHTML += `<p class="bot-message">If you intend to change your current weight, see a nutritionist so that he can put together an eating plan with the calories you need.</p><br>`;
       scrollDiv();
     }, 41000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message">Bom, são essas informações que consigo dar a você até o momento. Espero ter ajudado você, ${userName}! &#128521</p><br>`;
+      areaMessages.innerHTML += `<p class="bot-message">Well, this is the information I can give you so far. I hope I helped you, ${userName}! &#128521</p><br>`;
       scrollDiv();
     }, 46000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="bot-message"><span class="info">Muito obrigado por utilizar o Healthbot!</span></p>`;
+      areaMessages.innerHTML += `<p class="bot-message"><span class="info">Thank you so much for using Healthbot!</span></p>`;
       isTyping = false;
       typingControl();
       scrollDiv();
@@ -299,11 +300,11 @@ function controlInteraction() {
     }, 49000);
 
     setTimeout(function () {
-      document.getElementById('area-interaction').innerHTML = '<p class="example">Chat finalizado.</p>'
+      document.getElementById('area-interaction').innerHTML = '<p class="example">Chat finished.</p>'
     }, 50000);
 
     setTimeout(function () {
-      areaMessages.innerHTML += `<p class="credits">Healthbot foi desenvolvido por Daniel Mafra. Acompanhe mais em:<br><br><a class="social" href="https://www.linkedin.com/in/daniel-mafra/"><i class="fab fa-linkedin"></i></a><a class="social" href="https://github.com/DanielMafra"><i class="fab fa-github"></i></a><a class="social" href="https://www.instagram.com/danielmafraoficial/"><i class="fab fa-instagram"></i></a></p>`;
+      areaMessages.innerHTML += `<p class="credits">Healthbot was developed by Daniel Mafra. Follow more at:<br><br><a class="social" href="https://www.linkedin.com/in/daniel-mafra/"><i class="fab fa-linkedin"></i></a><a class="social" href="https://github.com/DanielMafra"><i class="fab fa-github"></i></a><a class="social" href="https://www.instagram.com/danielmafraoficial/"><i class="fab fa-instagram"></i></a></p>`;
       scrollDiv();
     }, 51000);
   }
